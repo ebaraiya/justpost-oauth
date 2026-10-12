@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Tumblr</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 48px 24px; color: #001935; }
+    a { display: inline-block; padding: 12px 24px; background: #001935; color: #fff; border-radius: 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h2>Returning to the app...</h2>
+  <p><a id="open" href="#">Open the app</a></p>
+  <script>
+    // Forwards ?code=..&state=.. (or ?error=..) into the app. Nothing is stored or sent anywhere.
+    // If the application ID has a debug suffix, change both scheme and package below.
+    var APP_ID = "com.nowonline.justpost";
+    var url = "intent://tumblr-callback" + location.search +
+      "#Intent;scheme=" + APP_ID + ";package=" + APP_ID + ";end";
+    document.getElementById("open").href = url;
+    location.replace(url);
+  </script>
+</body>
+</html>
